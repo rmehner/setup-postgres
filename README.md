@@ -17,6 +17,8 @@ See our `Test action.yml` steps [here](https://github.com/bmizerany/setup-postgr
 steps:
   # ...
   - uses: bmizerany/setup-postgres@v3
+
+  # Run your migrations, tests, etc.
   - run: psql 'SELECT 1'
   - run: go test ./...
   - run: bun test
