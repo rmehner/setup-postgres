@@ -18,6 +18,9 @@ steps:
   # ...
   - uses: bmizerany/setup-postgres@v3
   - run: psql 'SELECT 1'
+  - run: go test ./...
+  - run: bun test
+  # ...
 ```
 
 That's it!
