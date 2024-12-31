@@ -1,8 +1,11 @@
 name: 'Install Postgres'
-description: 'The fastest way to install Postgres for your GitHub Actions.'
+description: 'From zero to running Postgres faster than you can say "Postgres".'
+branding:
+  icon: 'fast-forward'
+  color: 'orange'
 inputs:
   version:
-    description: 'The version of postgres to install. Use the format <major>.<minor>.<patch>. All parts are required.'
+    description: 'The full, exact, version of postgres to install (e.g. 17.2.0).'
     required: true
     default: '17.2.0'
 outputs:
