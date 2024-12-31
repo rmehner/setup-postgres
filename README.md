@@ -1,15 +1,17 @@
 # setup-postgres
 
-Faster than fast setup for postgresql in a Github action.
+Fast (really fast), cross-platform, unconfined setup for Postgres in GitHub Actions.
+
+Works for all OSs and architectures supported by GitHub Actions!
 
 # Features
 
-- [x] Installs postgresql binaries (in PATH) for use in steps, fast!
-- [x] Starts a postgresql server in fast-mode*, fast!
-- [x] Configures environment variables for use in steps, fast!
-- [x] It's fast! >10x faster install and setup than other actions, complete in ~1-2 seconds!
+- [x] Binaries installed, in PATH, fast!
+- [x] Starts postgres in fast-mode*, fast!
+- [x] Environment variables setup for use in steps, fast!
 
-See our `Test action.yml` steps [here](https://github.com/bmizerany/setup-postgres/actions) for comparison.
+No Docker, no non-portable package managers. Just the binaries you need,
+installed and ready to do, fast!
 
 # Usage
 
@@ -29,13 +31,13 @@ That's it!
 
 ## Supported OSs and Architectures
 
-This action supports all OSs and architectures that Github actions supports; at
+This action supports all OSs and architectures that GitHub actions supports; at
 the time of writing.
 
 ## Supported Versions
 
 A version may be specified in the form of `X.Y.Z` where `X`, `Y`, and `Z` are
-integers. The version must be a valid version of postgresql that is available
+integers. The version must be a valid version of postgres that is available
 from the [embedded postgres project](https://github.com/zonkyio/embedded-postgres).
 
 A list of supported versions can be found [here](https://repo1.maven.org/maven2/io/zonky/test/postgres/embedded-postgres-binaries-linux-amd64/).
@@ -55,18 +57,18 @@ The action will set the following environment variables for subsequent steps:
 | `DATABASE_URL` | The DSN that can be used to connect to the database |
 
 > NOTE: `DATABASE_URL` is in the DSN form (e.g. `dbname=postgres user=postgres
-> ...`) which is accepted my most postgresql clients, drivers, ORMs, etc. It
+> ...`) which is accepted my most Postgres clients, drivers, ORMs, etc. It
 > was chosen over an actual URL because it is more flexible, and easier to
 > override settings by simply appending new settings to the string.
 >
-> Users that want a URL can build one like: `postgresql://$PGUSER:$PGPASSWORD@$PGHOST:$PGPORT/$PGDATABASE`
+> Users that want a URL can build one like: `postgres://$PGUSER:$PGPASSWORD@$PGHOST:$PGPORT/$PGDATABASE`
 
 
 ## Inputs
 
 | Name | Description | Default |
 | --- | --- | --- |
-| `version` | The version of postgresql to install | `17.2.0` |
+| `version` | The version of postgres to install | `17.2.0` |
 
 ## Outputs
 
@@ -81,7 +83,7 @@ the environment variables set by this action.
 
 ## Fast-mode
 
-This action runs postgresql in "fast-mode" which is a mode that disables `fsync`
+This action runs postgres in "fast-mode" which is a mode that disables `fsync`
 and `full_page_writes`. This is not recommended for production use, but is great
 for CI/CD environments where you want to get up and running quickly, and for
 tests to run lightning fast.
@@ -89,10 +91,10 @@ tests to run lightning fast.
 # Credits
 
 This is possible thanks to the [embedded postgres project](https://github.com/zonkyio/embedded-postgres)
-which provides pre-built binaries for many versions of postgresql. Please
+which provides pre-built binaries for many versions of postgres. Please
 consider supporting them if you find this action useful.
 
-This is obviously most possible because of the hard work of the postgresql
+This is obviously most possible because of the hard work of the postgres
 community. Thank you!
 
 # Contributing
