@@ -11,7 +11,7 @@ Works for all OSs and architectures supported by GitHub Actions!
 - [x] Environment variables setup for use in steps, fast!
 
 No Docker, no non-portable package managers. Just the binaries you need,
-installed and ready to do, fast!
+installed and ready to go, fast!
 
 # Usage
 
