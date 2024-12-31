@@ -15,7 +15,7 @@ See our `Test action.yml` steps [here](https://github.com/bmizerany/setup-postgr
 
 ```yaml
 steps:
-  ...
+  # ...
   - uses: bmizerany/setup-postgres@v3
   - run: psql 'SELECT 1'
 ```
