@@ -17,7 +17,7 @@ See our `Test action.yml` steps [here](https://github.com/bmizerany/setup-postgr
 steps:
   ...
   - uses: bmizerany/setup-postgres@v3
-  - with:
+    with:
         version: '17.2.0' ## Optional (default is '17.2.0'); must be in the form of 'X.Y.Z'
   # Connect the database in your tests (all envs are set already!)
   - run: psql 'SELECT 1'
